@@ -17,6 +17,7 @@ node {
 		pipenv install --system
 		coverage run --source='.'  manage.py test
 		coverage html
+                cp -rvp htmlcov ../DRUVA_APP_COVRAGE_REPORT/
         ''' 
         stage 'Build'
                 sh ''' #!/bin/bash
