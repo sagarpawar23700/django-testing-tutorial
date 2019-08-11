@@ -13,7 +13,7 @@ node {
         stage 'Test'
             sh 'python3 -m virtualenv venv'
             sh 'source venv/bin/activate'
-	    sh 'pip install coverage pipenv'
+	    sh 'pip3 install coverage pipenv'
 	    sh 'cd django-testing-tutorial'
 	    sh 'pipenv install --system'
 	    sh 'python manage.py runtests'
