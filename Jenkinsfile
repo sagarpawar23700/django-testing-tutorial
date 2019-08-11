@@ -4,7 +4,6 @@ node {
 
         stage 'Checkout'
             checkout scm
-            sh 'rm -rf django-testing-tutorial' 
       
             
 
