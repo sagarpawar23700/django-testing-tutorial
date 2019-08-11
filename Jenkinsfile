@@ -21,6 +21,6 @@ node {
         stage 'Build'
                 ssh ''' #!/bin/bash
                  docker build -t druvapp:latest .
-                   
+        '''           
 }
 
