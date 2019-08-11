@@ -41,10 +41,6 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'django_jenkins',
 ]
-JENKINS_TASKS = (
-#    'django_jenkins.tasks.run_pep8',
-#    'django_jenkins.tasks.run_pyflakes',
-)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
