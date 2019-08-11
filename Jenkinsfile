@@ -9,14 +9,20 @@ node {
       
             
 
+
         stage 'Test'
+            sh 'python3 -m virtualenv venv'
+            sh 'source venv/bin/activate'
+	    sh 'pip install coverage pipenv'
 	    sh 'cd django-testing-tutorial'
-            sh 'python3 manage.py test'
-            sh 'coverage run   manage.py test'
+	    sh 'pipenv install --system'
+	    sh 'python manage.py runtests'
+            sh 'coverage run --source='.'  manage.py test'
             sh 'coverage html' 
- 
+
+
         stage 'Deploy'
-            sh 'docker-compose up'
+            sh 'sudo docker-compose up'
 
  
 
