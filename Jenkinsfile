@@ -8,7 +8,7 @@ node {
 
 
 
-        stage 'Test
+        stage 'Test'
 		    
         
             sh 'docker build -t druvaapp_Test .'
