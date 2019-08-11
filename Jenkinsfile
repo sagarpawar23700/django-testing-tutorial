@@ -12,7 +12,7 @@ node {
             
             sh 'python3 -m virtualenv venv'
             sh 'source ./venv/bin/activate'
-            sh './venv/bin/pip install coverage pipenv django'
+            sh './venv/bin/pip install coverage pipenv '
 	    sh './venv/bin/pipenv install --system'
 	    sh './venv/bin/python manage.py test'
             sh './venv/bin/coverage run --source='.'  manage.py test'
@@ -20,10 +20,10 @@ node {
 
 
         stage 'Deploy'
-            sh 'sudo docker rmi druvaapp:v1'
-            sh 'sudo docker build -t druvaapp:v1 .' 
-            sh 'sudo docker stop druva_testapp'
-            sh 'sudo docker run -d -p 8000:8000 --name druva_testapp druvaapp:v1' 
+            sh 'docker rmi druvaapp:v1'
+            sh 'docker build -t druvaapp:v1 .' 
+            sh 'docker stop druva_testapp'
+            sh 'docker run -d -p 8000:8000 --name druva_testapp druvaapp:v1' 
 
 
  
