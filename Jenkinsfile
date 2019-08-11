@@ -21,10 +21,10 @@ node {
         stage 'Build'
                 sh ''' #!/bin/bash
                
-	        docker -tag  druvapp:latest druvapp:":$BUILD_NUMBER"
+	        docker -tag  druvapp:latest druvapp:"$BUILD_NUMBER"
                 docker build -t druvapp:latest .
 		docker stop druvapp 
-		docker druvapp druvapp_":$BUILD_NUMBER"
+		docker druvapp druvapp_"$BUILD_NUMBER"
 	        docker run -d -p 8000:8000 --name druvapp druvapp:latest 	
            
         '''
