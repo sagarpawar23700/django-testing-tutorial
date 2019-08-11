@@ -18,6 +18,9 @@ node {
 		coverage run --source='.'  manage.py test
 		coverage html
         ''' 
-
+        stage 'Build'
+                ssh ''' #!/bin/bash
+                 docker build -t druvapp:latest .
+                   
 }
 
