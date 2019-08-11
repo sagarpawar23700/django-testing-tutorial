@@ -12,11 +12,11 @@ node {
 
         stage 'Test'
             sh 'python3 -m virtualenv venv'
-			sh 'source venv/bin/activate'
-			sh 'pip3 install coverage'
-                        sh 'pip3 install Django'
-			sh 'cd django-testing-tutorial'
-			sh 'python3 manage.py runtests'
+            sh 'source venv/bin/activate'
+	    sh 'pip3 install coverage'
+            sh 'pip3 install Django'
+	    sh 'cd django-testing-tutorial'
+	    sh 'python3 manage.py test'
             sh 'coverage run --source='.'  manage.py test'
             sh 'coverage html' 
    
