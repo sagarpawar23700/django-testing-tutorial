@@ -4,7 +4,7 @@ node {
 
         stage 'Checkout'
             checkout scm
-            sh 'rm -rf venv ' 
+            sh 'rm -rf *.* ' 
       
             
 
