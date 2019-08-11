@@ -19,8 +19,9 @@ node {
 		coverage html
         ''' 
         stage 'Build'
-                ssh ''' #!/bin/bash
+                sh ''' #!/bin/bash
                  docker build -t druvapp:latest .
+                 docker images 
         '''           
 }
 
