@@ -10,7 +10,7 @@ node {
 
         stage 'Test'
 		sh ''' #!/bin/bash    
-        python3 -m virtualenv venv
+	        python3 -m virtualenv venv
 		. venv/bin/activate
 		pip install coverage
 		pip install pipenv
@@ -19,5 +19,11 @@ node {
 		coverage html
         ''' 
 
+        stage 'Deplyment'
+
+                sh ''' #!/bin/bash
+                   docker-compose down
+                   docker-compose up
+                '''
 }
 
