@@ -12,6 +12,8 @@ node {
         stage 'Test'
 	    sh 'cd django-testing-tutorial'
             sh 'python3 manage.py test'
+            sh 'coverage run   manage.py test'
+            sh 'coverage html' 
  
         stage 'Deploy'
             sh 'docker-compose up'
