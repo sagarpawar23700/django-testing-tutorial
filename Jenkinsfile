@@ -16,7 +16,7 @@ node {
 			sh 'pip3 install coverage'
                         sh 'pip3 install Django'
 			sh 'cd django-testing-tutorial'
-			sh 'python manage.py runtests'
+			sh 'python3 manage.py runtests'
             sh 'coverage run --source='.'  manage.py test'
             sh 'coverage html' 
    
