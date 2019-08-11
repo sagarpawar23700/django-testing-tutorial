@@ -22,8 +22,10 @@ node {
 
 
         stage 'Deploy'
-            sh 'sudo docker build -t ' 
+            sh 'sudo docker rmi druvaapp:v1'
+            sh 'sudo docker build -t druvaapp:v1 .' 
             sh 'sudo docker stop druva_testapp'
+            sh 'sudo docker run -d -p 8000:8000 --name druva_testapp druvaapp:v1' 
 
 
  
