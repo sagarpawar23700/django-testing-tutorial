@@ -15,7 +15,7 @@ node {
 	   
             sh 'venv/bin/pip install coverage pipenv django'
 	    sh 'venv/bin/pipenv install --system'
-	    sh 'venv/bin/python manage.py test'
+	    sh 'venv/bin/python3 manage.py test'
             sh 'venv/bin/coverage run --source='.'  manage.py test'
             sh 'venv/bin/coverage html' 
 
