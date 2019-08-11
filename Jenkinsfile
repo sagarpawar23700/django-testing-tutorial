@@ -15,7 +15,7 @@ node {
 		pip install coverage
 		pip install pipenv
 		pipenv install --system
-		coverage run --source='.'  --omit="venv"  manage.py test
+		coverage run --source='.'  --omit='venv'  manage.py test
 		coverage html
                 cp -rvp htmlcov ../DRUVA_APP_COVRAGE_REPORT/
         ''' 
