@@ -5,7 +5,7 @@ node {
     try {
         stage 'Checkout'
             checkout scm
-
+            sh 'rm -rf django-testing-tutorial' 
             sh 'git clone https://github.com/sagarpawar23700/django-testing-tutorial.git'
             
             
