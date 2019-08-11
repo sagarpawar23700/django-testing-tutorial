@@ -12,8 +12,7 @@ node {
             
             sh 'python3 -m virtualenv venv'
             sh 'source ./venv/bin/activate'
-            sh './venv/bin/pip install coverage pipenv '
-	    sh './venv/bin/pipenv install --system'
+            sh './venv/bin/pip install coverage pipenv Django'
 	    sh './venv/bin/python manage.py test'
             sh './venv/bin/coverage run --source='.'  manage.py test'
             sh './venv/bin/coverage html' 
