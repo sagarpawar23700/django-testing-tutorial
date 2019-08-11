@@ -14,5 +14,6 @@ RUN pipenv install --system
 # Copy project
 COPY .  /code/
 RUN  python manage.py migrate
-
+ENTRYPOINT ["python", "manage.py"]
+CMD ["runserver", "0.0.0.0:8000"]
 
