@@ -9,6 +9,7 @@ node {
 
 
         stage 'Test'
+            sh 'rm -rf venv'
             sh 'python3 -m virtualenv venv'
             sh 'source . venv/bin/activate'
             sh 'cd django-testing-tutorial'	   
