@@ -4,14 +4,14 @@ node {
 
         stage 'Checkout'
             checkout scm
-            sh ' rm -rf venv' 
+            sh 'rm -rf venv' 
             
 
 
         stage 'Test'
             
             sh 'python3 -m virtualenv venv'
-            sh 'source . venv/bin/activate'
+            sh 'source ./venv/bin/activate'
             sh 'cd django-testing-tutorial'	   
             sh '../venv/bin/pip install coverage pipenv django'
 	    sh '../venv/bin/pipenv install --system'
