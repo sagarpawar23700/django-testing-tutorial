@@ -4,12 +4,12 @@ node {
 
         stage 'Checkout'
             checkout scm
-      
+            sh ' rm -rf venv' 
             
 
 
         stage 'Test'
-            sh 'sudo rm -rf venv'
+            
             sh 'python3 -m virtualenv venv'
             sh 'source . venv/bin/activate'
             sh 'cd django-testing-tutorial'	   
