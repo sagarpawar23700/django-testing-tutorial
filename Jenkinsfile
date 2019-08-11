@@ -12,12 +12,11 @@ node {
             
             sh 'python3 -m virtualenv venv'
             sh 'source ./venv/bin/activate'
-            sh 'cd django-testing-tutorial'	   
-            sh '../venv/bin/pip install coverage pipenv django'
-	    sh '../venv/bin/pipenv install --system'
-	    sh '../venv/bin/python manage.py test'
-            sh '../venv/bin/coverage run --source='.'  manage.py test'
-            sh '../venv/bin/coverage html' 
+            sh './venv/bin/pip install coverage pipenv'
+	    sh './venv/bin/pipenv install --system'
+	    sh './venv/bin/python manage.py test'
+            sh './venv/bin/coverage run --source='.'  manage.py test'
+            sh './venv/bin/coverage html' 
 
 
         stage 'Deploy'
