@@ -19,11 +19,5 @@ node {
 		coverage html
         ''' 
 
-        stage 'Deplyment'
-
-                sh ''' #!/bin/bash
-                   docker-compose down
-                   docker-compose up
-                '''
 }
 
