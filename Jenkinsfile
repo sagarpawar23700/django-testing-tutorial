@@ -15,7 +15,7 @@ node {
 			sh '. venv/bin/activate'
 			sh 'pip3 install coverage'
 			sh 'pip3 install pipenv'
-			sh 'pipenv install --system'
+			sh 'venv/bin/pipenv install --system'
 			sh 'cd django-testing-tutorial'
 			sh 'python manage.py runtests'
             sh 'coverage run --source='.'  manage.py test'
