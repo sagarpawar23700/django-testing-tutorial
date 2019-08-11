@@ -4,8 +4,7 @@ node {
 
         stage 'Checkout'
             checkout scm
-            sh 'rm -rf venv django-testing-tutorial' 
-            sh 'git clone https://github.com/sagarpawar23700/django-testing-tutorial.git'
+            sh 'rm -rf venv ' 
       
             
 
@@ -14,11 +13,11 @@ node {
             sh 'python3 -m virtualenv venv'
             sh 'source venv/bin/activate'
 	   
-            sh 'pip install coverage pipenv'
+            sh 'venv/bin/pip install coverage pipenv'
 	    sh 'venv/bin/pipenv install --system'
-	    sh 'python manage.py runtests'
-            sh 'coverage run --source='.'  manage.py test'
-            sh 'coverage html' 
+	    sh 'python manage.py test'
+            sh 'venv/bin/coverage run --source='.'  manage.py test'
+            sh 'venv/bin/coverage html' 
 
 
         stage 'Deploy'
