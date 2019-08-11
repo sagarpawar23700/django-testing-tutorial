@@ -13,16 +13,18 @@ node {
         stage 'Test'
             sh 'python3 -m virtualenv venv'
             sh 'source venv/bin/activate'
-	    sh 'pip3 install coverage pipenv'
 	    sh 'cd django-testing-tutorial'
-	    sh 'pipenv install --system'
+            sh 'pip3 install coverage pipenv'
+	    sh '~/venv/bin/pipenv install --system'
 	    sh 'python manage.py runtests'
             sh 'coverage run --source='.'  manage.py test'
             sh 'coverage html' 
 
 
         stage 'Deploy'
-            sh 'sudo docker-compose up'
+            sh 'sudo docker build -t ' 
+            sh 'sudo docker stop druva_testapp'
+
 
  
 
