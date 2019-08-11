@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
     'posts.apps.PostsConfig',
-    'django_jenkins',
+#    'django_jenkins',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
