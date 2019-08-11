@@ -11,7 +11,6 @@ node {
 
         stage 'Test'
 	    sh 'cd django-testing-tutorial'
-	    sh 'python3 manage.py test'
             sh 'coverage run --source='.'  manage.py test'
             sh 'coverage html' 
    
