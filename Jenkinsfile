@@ -18,11 +18,5 @@ node {
 		coverage run --source='.'  manage.py test
 		coverage html
         ''' 
-        stage 'Build'
-                sh ''' #!/bin/bash
-                 id
-                 docker build -t druvapp:latest .
-                 docker images 
-        '''           
 }
 
